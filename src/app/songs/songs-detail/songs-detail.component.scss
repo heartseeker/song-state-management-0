@@ -1,0 +1,14 @@
+.songs-item {
+    display: flex;
+    flex: 1;
+
+    &--detail {
+        margin-right: auto;
+    }
+}
+
+.songs-artist {
+    font-size: 12px;
+    margin-left: 3px;
+    font-weight: bold;
+}

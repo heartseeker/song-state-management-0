@@ -1,0 +1,15 @@
+
+<div class="songs">
+  <div class="songs-list">
+    <mat-list>
+      <div *ngFor="let song of songs">
+        <mat-list-item>
+          <sng-songs-detail (selectedSong)="selectedSong($event)" [song]="song"></sng-songs-detail>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </div>
+    </mat-list>
+  </div>
+
+</div>
+
