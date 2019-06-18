@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
+import { Store } from '@ngrx/store';
+
 
 @Component({
   selector: 'sng-songs-selected',
@@ -11,11 +13,16 @@ export class SongsSelectedComponent implements OnInit {
 
   @Output() bookmarked = new EventEmitter();
 
-  @Input() song;
+  song;
 
-  constructor() { }
+  constructor(
+    private store: Store<any>,
+  ) { }
 
   ngOnInit() {
+    this.store.select('songs').subscribe(({ currentSong }) => {
+      this.song = currentSong;
+    });
   }
 
   save() {

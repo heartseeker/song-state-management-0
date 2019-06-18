@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import { Store } from '@ngrx/store';
+import * as songsAction from '../store/songs.action';
 
 @Component({
   selector: 'sng-songs-detail',
@@ -12,13 +14,15 @@ export class SongsDetailComponent implements OnInit {
 
   @Input() song;
 
-  constructor() { }
+  constructor(
+    private store: Store<any>
+  ) { }
 
   ngOnInit() {
   }
 
   selectSong(song) {
-    this.selectedSong.emit(song);
+    this.store.dispatch(new songsAction.SelectSong(song));
   }
 
 }

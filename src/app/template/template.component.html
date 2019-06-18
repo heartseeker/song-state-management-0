@@ -1,9 +1,7 @@
-<mat-toolbar>My Songs</mat-toolbar>
-
 <div class="template-layout">
     <sng-songs-list (currentSong)="selectSong($event)"></sng-songs-list>
     <div class="songs-detail">
-        <sng-songs-selected (bookmarked)="bookmark($event)" *ngIf="currentSong" [song]="currentSong"></sng-songs-selected>
+        <sng-songs-selected (bookmarked)="bookmark($event)"></sng-songs-selected>
     </div>
 </div>
 
