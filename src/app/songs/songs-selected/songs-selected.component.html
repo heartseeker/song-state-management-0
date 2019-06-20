@@ -1,6 +1,8 @@
-<h2>{{ song.title }}</h2>
-<span class="artist">{{ song.artist }}</span>
-
-<div [innerHtml]="song.lyrics"></div>
-
-<button mat-raised-button color="warn" (click)="save()">Bookmark</button>
+<div *ngIf="song">
+    <h2>{{ song.title }}</h2>
+    <span class="artist">{{ song.artist }}</span>
+    
+    <div [innerHtml]="song.lyrics"></div>
+    
+    <button mat-raised-button color="warn" (click)="save()">Bookmark</button>
+</div>
